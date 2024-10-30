@@ -11,5 +11,14 @@ Access modifiers
 
 * `public`
 * `private`
+* `protected`
 * `virtual`
 * `override`
+
+.NET uses the terms "base class" and "derived class" (as opposed to super and sub).
+
+Calling a base class' method from inside of a derived class:
+
+```C#
+base.SomeMethod();
+```
