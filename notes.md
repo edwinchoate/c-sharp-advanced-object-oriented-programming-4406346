@@ -52,3 +52,35 @@ How to check to see if an anonymous type has a specific property:
 ```C#
 bool hasFirstName = obj.GetType().GetProperty("FirstName") != null;
 ```
+
+## Ch. 2 Class Operations
+
+_Object initializer syntax_ - .NET provides a convenient way to avoid having to write a bunch of boilerplate object initialization code. This allows you to use the JSON-like syntax from anonymous types to set several values upon object creation, similar to how you might do this in JavaScript.
+
+Example of using an object initializer: 
+
+```C#
+Dog dog = new Dog { Name="Fido", Age=5, IsTrained=true };
+```
+
+You can combine the concepts of anonymous types and object initializers to give you a very JavaScript-like line of code: 
+
+```C#
+var dog = new { Name="Fido", Age=5, IsTrained=true };
+```
+
+Technically, the below array init syntax is this same thing, object initializer syntax:
+
+```C#
+int[] numbers = new int[] {1, 2, 3, 4};
+```
+
+You can use object initializers with collections too: 
+
+```C#
+var pets = new List<Pet> 
+{
+    new Dog {...},
+    new Cat {...},
+};
+```

@@ -1,14 +1,28 @@
 ﻿// Example file for Advanced C#: Object Oriented Programming by Joe Marini
 // Using object and collection initializers
+class Program 
+{
 
-// TODO: Use the initializer syntax to create new objects
+    static void Main (string[] args) 
+    {
+        // TODO: Use the initializer syntax to create new objects
+        Dog dog = new Dog { Name="Fido", Age=5, IsTrained=true };
+        Cat cat = new Cat { Name="Mr. Meow", Age=3, IsDeclawed=false };
 
+        // TODO: Initializers can be used on anonymous types
+        var dog2 = new { Name="Fido", Age=5, IsTrained=true };
 
-// TODO: Initializers can be used on anonymous types
+        // TODO: Collections can also be initialized this way
+        int[] numbers = new int[] {1, 2, 3, 4};
 
+        // TODO: Initialize a collection with a set of objects
+        PetOwner owner = new();
 
-// TODO: Collections can also be initialized this way
+        owner.Pets = new List<Pet>
+        {
+            new Dog { Name="Fido", Age=5, IsTrained=true },
+            new Cat { Name="Mr. Meow", Age=3, IsDeclawed=false }
+        };
+    }
 
-
-// TODO: Initialize a collection with a set of objects
-
+}
