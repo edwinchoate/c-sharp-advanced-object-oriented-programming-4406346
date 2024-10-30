@@ -6,11 +6,19 @@ class Shape2D {
     public Shape2D() {}
 
     // TODO: Methods must be marked as "virtual" to allow overriding
-
+    public virtual float GetArea () 
+    {
+        return 0.0f;
+    }
 
     // TODO: All classes in .NET derive from Object, so we get some methods for free
     // ToString() returns a string representation of the object
     // GetType() returns the type of the object
+
+    public override string ToString () 
+    {
+        return $"This 2D shape is a {GetType()}";
+    }
 }
 
 // Derive a Circle class that inherits from the base Shape2D
@@ -20,6 +28,10 @@ class Circle : Shape2D {
     }
 
     // TODO: Override the GetArea() function for the Circle
+    public override float GetArea () 
+    {
+        return (float)(Math.PI * Math.Pow(radius, 2));
+    }
 
     int radius;
 }
@@ -32,9 +44,18 @@ class Rectangle : Shape2D {
     }
 
     // TODO: Override the GetArea() function for the Rectangle
+    public override float GetArea () 
+    {
+        return (float)(width * height);
+    }
 
     int width;
     int height; 
 }
 
 // TODO: Derive a Square class that inherits from the base Rectangle
+class Square : Rectangle 
+{
+    public Square (int side) : base(side, side) {}
+    
+}
