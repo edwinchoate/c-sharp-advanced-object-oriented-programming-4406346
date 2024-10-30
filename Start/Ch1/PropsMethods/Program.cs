@@ -8,6 +8,8 @@ Console.WriteLine(rect1.GetArea());
 Console.WriteLine(rect2.GetArea());
 
 // TODO: Operate on the Properties
-
+rect1.BorderSize = 5;
+Console.WriteLine("{0}", rect1.BorderSize);
 
 // TODO: Try setting an invalid value
+// rect1.Height = -1;
