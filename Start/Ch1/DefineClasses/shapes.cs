@@ -14,3 +14,29 @@
 
 
     // TODO: member variables hold data
+
+
+class Rectangle
+{
+
+    int _width;
+    int _height;
+    
+    public Rectangle (int width, int height)
+    {
+        _width = width;
+        _height = height;
+    }
+
+    public Rectangle (int side) 
+    {
+        _width = side;
+        _height = side;
+    }
+
+    public int GetArea () 
+    {
+        return _width * _height;
+    }
+
+}
