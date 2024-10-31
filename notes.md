@@ -84,3 +84,5 @@ var pets = new List<Pet>
     new Cat {...},
 };
 ```
+
+`readonly` field values can be set in either a constructor or upon initialization.
