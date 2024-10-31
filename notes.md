@@ -86,3 +86,9 @@ var pets = new List<Pet>
 ```
 
 `readonly` field values can be set in either a constructor or upon initialization.
+
+Init-only properties are ones that can only be set once:
+
+```C#
+public int SomeProp { get; init; }
+```
