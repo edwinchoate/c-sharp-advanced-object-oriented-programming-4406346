@@ -85,10 +85,28 @@ var pets = new List<Pet>
 };
 ```
 
-`readonly` field values can be set in either a constructor or upon initialization.
+`readonly` field values can only be set in either a constructor or upon initialization.
 
 Init-only properties are ones that can only be set once:
 
 ```C#
 public int SomeProp { get; init; }
 ```
+
+`required` properties enforce that the property must be initialized to a value upon object initialization:
+
+```C#
+public required int SomeProp { get; set; }
+```
+
+Unfortunately, the `required` property concept is flawed. Because the compiler doesn't do the work of checking to see if the required properties have been set via the constructor(s). So, the compiler will throw a compiler error even if you've set all of the required properties in the constructor. To work around this, you place the `[SetsRequiredMembers]` attribute in front of the constructor. The problem, though, is that the compiler just takes your word for it. So, it's ultimately a half-baked language feature. 
+
+```C#
+// How to stop the compiler from throwing false-positive compiler errors wrt required properties
+// assumption: this constructor actually does in fact set all required properties
+
+[SetsRequiredMembers]
+public MyClass (...) {...}
+```
+
+Best practice: Use `[SetsRequiredMembers]` sparingly.
