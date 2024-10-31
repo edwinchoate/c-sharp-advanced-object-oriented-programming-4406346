@@ -110,3 +110,32 @@ public MyClass (...) {...}
 ```
 
 Best practice: Use `[SetsRequiredMembers]` sparingly.
+
+## Ch. 3 Static Classes and Methods 
+
+* `static`
+* `const`
+
+It's totally valid to use method overloading to have both non-static and static versions of methods 
+
+```C#
+class MyClass
+{
+    public void Hello () {...}
+    public static void Hello (string name) {...}
+}
+```
+
+However, like regular overloading, the method signature must be different in some way. The `static` keyword alone does not count as a difference. 
+
+```C#
+// This doesn't compile:
+public void Hello () {...}
+public static void Hello () {...}
+```
+
+```C#
+// And this doesn't compile either:
+public static string Hello () {...}
+public string Hello { get; set; }
+```
