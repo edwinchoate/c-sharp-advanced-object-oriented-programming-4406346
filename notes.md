@@ -139,3 +139,18 @@ public static void Hello () {...}
 public static string Hello () {...}
 public string Hello { get; set; }
 ```
+
+Static classes...
+
+1. Cannot be instantiated
+2. Are `sealed` by default 
+
+You can use the `static` keyword to define a _static constructor_, which is a parameterless constructor that gets implicitly called by .NET. You can't make a call to the static constructor yourself. These are useful for initializing field values when the program starts up. 
+
+```C#
+static SomeClass () 
+{
+    _someInt = 5;
+    _someStr = "--";
+}
+```
